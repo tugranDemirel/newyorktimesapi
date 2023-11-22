@@ -2,7 +2,6 @@ import './App.css';
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Item from "./component/Item";
-const API_KEY = '7X30L00kEe4yb0k1p1R3VfEnONAvJAFg';
 function App() {
     const [loading, setLoading] = useState(false)
   const [data, setData] = useState([]);
@@ -10,7 +9,7 @@ function App() {
     const [currentPage, setCurrentPage] = useState(0)
     const [hasMore, setHasMore] = useState(false)
   const searchAPI = () => {
-    axios.get(`http://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${encodeURIComponent(query)}&api-key=${API_KEY}&offset=${currentPage}`)
+    axios.get(`http://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${encodeURIComponent(query)}&api-key=${process.env.REACT_APP_NY_TIMES_API_KEY}&offset=${currentPage}`)
         .then((res) => {
             if (query == '')
             {
