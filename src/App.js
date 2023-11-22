@@ -1,6 +1,5 @@
 import './App.css';
 import React, { useState, useEffect } from "react";
-import Axios from 'axios';
 import axios from "axios";
 import Item from "./component/Item";
 const API_KEY = '7X30L00kEe4yb0k1p1R3VfEnONAvJAFg';
